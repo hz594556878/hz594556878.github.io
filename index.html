@@ -1,18 +1,87 @@
-<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
-	<title>私人相册</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>送给妞妞</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
 </head>
+
 <body>
-	<input type="button" id="btn" value="按钮">
-	<script type="text/javascript">
-		$("#btn").click(function(){
-			alert(123);
-		});
-	</script>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<p>初次见面在D7旁的转盘那里。我穿着那件黄色的短袖，红色的短裤，屌丝牌夹板拖鞋，透着一股浓浓的屌丝风，带着你们去澡堂。</p>
+			<p>后来我给他们培训，你帮我给他们签到，培训后帮我把签到表整理得一丝不苟。再后来在上课的路上遇见我会莫名其妙的笑。</p>
+			<p>后来12年的12月27号，我期末考试结束了。和他们一起去上通宵，从这天开始，我们都在聊天。一天不曾间断。13年的1月底那两天，我给妞妞表白了，我说我想牵着妞妞的手一起去吃饭，去散步。妞妞说考虑两天，当时我其实是非常怕的，怕就那么妞妞就不理我了。怕表白不成功，连朋友都没得做了。幸好过了两天妞妞同意了。</p>
+			<p>从13年2月1日到现在 <span class="note">（14年5月20日）</span> 我们走过了474个日夜 <span class="note">（原谅右侧时间计算不对，过两天改算法）</span>，474个日夜让我们变得相知相守。我现在想和妞妞永远的走下去。最幸福的事就是和妞妞一起慢慢变老，和妞妞一起迎接每个清晨的阳光和傍晚的余晖。</p>
+			<p>我是一个木讷的人，没有给过妞妞什么浪漫和惊喜。甚至这个页面也是别人做的 <span class="note">（我做不来右边的动画效果）</span>，唯一给过妞妞的也就只有那个亲手制作的牙签房子了。本来该买点什么东西给妞妞的。但是恰逢没钱。猪猪也只能这样做了。还望妞妞能抿嘴一笑:D</p>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 钟、小浩</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2013, 02, 01);
+together.setHours(21);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "妞妞，你的浏览器不支持特效。换谷歌浏览器吧。"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	setTimeout(function(){
+		play("http://bcs.duapp.com/fuliqu/3302033_150797_l.mp3");
+	},500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
 </body>
 </html>
