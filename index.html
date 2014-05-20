@@ -15,7 +15,12 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/garden.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
-
+<script type="text/javascript" src="js/snow.js"></script>
+<script>
+	setTimeout(function(){
+		createSnow('', 60);
+	},1000);
+</script>
 </head>
 
 <body>
@@ -75,7 +80,7 @@ if (!document.createElement('canvas').getContext) {
 	}, 500);
 
 	setTimeout(function(){
-		play("http://bcs.duapp.com/fuliqu/3302033_150797_l.mp3");
+		play("music/ibelieve.mp3");
 	},500);
 
 	adjustCodePosition();

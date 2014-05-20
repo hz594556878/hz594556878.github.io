@@ -1,4 +1,4 @@
-﻿body{margin:0;padding:0;background:#ffe;font-size:12px;overflow:auto}
+﻿body{margin:0;padding:0;background:#ffe url(../images/back.png);font-size:12px;overflow:auto}
 #mainDiv{width:100%;height:100%}
 #loveHeart{float:left;width:670px;height:625px}
 #garden{width:100%;height:100%}
@@ -9,7 +9,7 @@
 #loveu{padding:5px;font-size:22px;margin-top:80px;margin-right:120px;text-align:right;display:none}
 #loveu .signature{margin-top:10px;font-size:20px;font-style:italic}
 #clickSound{display:none}
-#code{float:left;width:440px;height:400px;color:#333;font-family:"宋体","Consolas","Monaco","Bitstream Vera Sans Mono","Courier New","sans-serif";font-size:14px}
+#code{float:left;width:440px;height:400px;color:#787878;font-family:"宋体","Consolas","Monaco","Bitstream Vera Sans Mono","Courier New","sans-serif";font-size:14px}
 #code p{line-height: 22px;text-indent: 2em}
 #code .note{color:#9D1C0D;}
 #copyright{margin-top:10px;text-align:center;width:100%;color:#666}
